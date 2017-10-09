@@ -12,4 +12,15 @@ class Member
     @district    = attributes[:district]
     @seniority   = attributes[:seniority]
   end
+
+
+  def self.find_all(state) #not a class method in the tutorial
+
+    members = PropublicaService.find_house_members(state).map do |raw_member|
+      Member.new(raw_member)
+    end
+
+  end
+
+
 end
