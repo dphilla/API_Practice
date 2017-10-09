@@ -15,7 +15,7 @@ def initialize(state)
   def get_url(url)
     response = @conn.get(url)
     JSON.parse(response.body, symbolize_names: true)[:results]
-    require 'pry'; binding.pry
+
   end
 
   def self.find_house_members(state)
